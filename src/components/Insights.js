@@ -29,7 +29,7 @@ export default function Insights({ sharedData, setSharedData }) {
       let profile = sharedData?.profile;
 
       if (!profile) {
-        const profileResp = await fetch("http://localhost:8000/analyze-profile", {
+        const profileResp = await fetch("https://astroforge-ai.onrender.com/analyze-profile", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ social_url: DEMO_URL }),
@@ -42,7 +42,7 @@ export default function Insights({ sharedData, setSharedData }) {
       }
 
       // Step 2: Generate AI insights using the profile
-      const insightsResp = await fetch("http://localhost:8000/generate-ai-insights", {
+      const insightsResp = await fetch("https://astroforge-ai.onrender.com/generate-ai-insights", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

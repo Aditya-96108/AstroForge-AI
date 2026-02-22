@@ -9,7 +9,7 @@ export default function PDFSection({ sharedData }) {
     setDone(false);
     await new Promise(r => setTimeout(r, 2000));
     try {
-      const resp = await fetch("http://localhost:8000/generate-report", {
+      const resp = await fetch("https://astroforge-ai.onrender.com/generate-report", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

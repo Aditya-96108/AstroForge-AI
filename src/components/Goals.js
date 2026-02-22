@@ -21,7 +21,7 @@ export default function Goals({ setSharedData }) {
     setLoading(true);
     await new Promise(r => setTimeout(r, 1500));
     try {
-      const resp = await fetch("http://localhost:8000/calculate-goals", {
+      const resp = await fetch("https://astroforge-ai.onrender.com/calculate-goals", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ current_followers: form.current, target_followers: form.target, timeline_months: form.months, niche: form.niche, posting_frequency: form.freq }),

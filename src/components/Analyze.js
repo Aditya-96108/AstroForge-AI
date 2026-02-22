@@ -825,7 +825,7 @@ export default function CreatorAnalyzer() {
         if (views) fd.append("views", views);
       }
 
-      const resp = await fetch("http://localhost:8000/creator-analysis", {
+      const resp = await fetch("https://astroforge-ai.onrender.com/creator-analysis", {
         method: "POST",
         body: fd,   // multipart — do NOT set Content-Type header manually
       });
@@ -839,7 +839,7 @@ export default function CreatorAnalyzer() {
       setResult(data);
       setTimeout(() => resultRef.current?.scrollIntoView({behavior:"smooth",block:"start"}), 150);
     } catch (e) {
-      setError(e.message || "Could not reach backend. Make sure it is running on http://localhost:8000");
+      setError(e.message || "Could not reach backend. Make sure it is running on https://astroforge-ai.onrender.com");
     } finally {
       setLoading(false);
     }

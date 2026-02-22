@@ -22,7 +22,7 @@ export default function Astrology({ setSharedData }) {
     setError("");
     setData(null);
     try {
-      const resp = await fetch("http://localhost:8000/astrology-analysis", {
+      const resp = await fetch("https://astroforge-ai.onrender.com/astrology-analysis", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
@@ -49,7 +49,7 @@ export default function Astrology({ setSharedData }) {
     try {
       const formData = new FormData();
       formData.append("image", palmFile);
-      const resp = await fetch("http://localhost:8000/palm-analysis", {
+      const resp = await fetch("https://astroforge-ai.onrender.com/palm-analysis", {
         method: "POST",
         body: formData,
       });

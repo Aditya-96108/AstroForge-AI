@@ -28,7 +28,7 @@ export default function Charts() {
     setError("");
     try {
       // Fetch profile → gives us growth_data (weekly followers + engagement)
-      const profileResp = await fetch("http://localhost:8000/analyze-profile", {
+      const profileResp = await fetch("https://astroforge-ai.onrender.com/analyze-profile", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ social_url: DEMO_URL }),
